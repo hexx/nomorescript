@@ -5,7 +5,7 @@ import scala.tools.nsc.SubComponent
 import com.github.suzuki0keiichi.nomorescript.trees.NoMoreScriptEmpty
 import com.github.suzuki0keiichi.nomorescript.trees.NoMoreScriptIdent
 
-trait IdentConverter extends AnnotationHelper with PackageHelper {
+trait IdentConverter extends ConverterBase with AnnotationHelper with PackageHelper {
   self: SubComponent =>
 
   import global._

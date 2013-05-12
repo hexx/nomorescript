@@ -3,8 +3,6 @@ package com.github.suzuki0keiichi.nomorescript.plugin
 import scala.tools.nsc.plugins.PluginComponent
 import scala.tools.nsc.plugins.Plugin
 import scala.tools.nsc.Global
-import java.io.OutputStreamWriter
-import java.io.FileOutputStream
 
 class NoMoreScriptPlugin(val global: Global) extends Plugin {
   val name: String = "nomorescript"

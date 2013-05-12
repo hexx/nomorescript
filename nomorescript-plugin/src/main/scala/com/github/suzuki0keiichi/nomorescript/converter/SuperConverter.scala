@@ -11,7 +11,7 @@ trait SuperConverter extends ConverterBase with PackageHelper {
 
   def convertSuper(sper: Super, returnValue: Boolean) = {
     val parent = sper.symbol.tpe.parents.collectFirst {
-      case ref: UniqueTypeRef if (!ref.typeSymbol.isTrait) => ref.typeSymbol
+      case ref: TypeRef if (!ref.typeSymbol.isTrait) => ref.typeSymbol
     }
 
     NoMoreScriptIdent(getPackageName(parent.get, null).get, returnValue)

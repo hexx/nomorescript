@@ -85,7 +85,7 @@ trait ApplyConverter extends ConverterBase with SelectConverter with TypeApplyCo
       case _ => None
     }
   }
-  
+
   def isArrayApply(aply: Apply): Boolean = {
     val COLLECTION_NAMES = List("Array", "Map")
 

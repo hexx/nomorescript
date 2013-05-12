@@ -9,10 +9,10 @@ trait TraitHelper {
 
   def getSuperTraitsWithParent(parent: Symbol): List[Symbol] = {
     val traits = parent.tpe.parents.collect {
-      case t: UniqueTypeRef if (!BaseClasses.isBaseClass(t.toString) && !t.typeSymbol.isTrait) =>
+      case t: TypeRef if (!BaseClasses.isBaseClass(t.toString) && !t.typeSymbol.isTrait) =>
         getSuperTraitsWithParent(t.typeSymbol)
 
-      case t: UniqueTypeRef if (!BaseClasses.isBaseClass(t.toString) && t.typeSymbol.isTrait) =>
+      case t: TypeRef if (!BaseClasses.isBaseClass(t.toString) && t.typeSymbol.isTrait) =>
         getSuperTraitsWithParent(t.typeSymbol) ::: List(t.typeSymbol)
     }
 
@@ -21,7 +21,7 @@ trait TraitHelper {
 
   def getAllSuperTraits(parent: Symbol, excludes: List[Symbol]): List[Symbol] = {
     val traits = parent.tpe.parents.collect {
-      case t: UniqueTypeRef if (!BaseClasses.isBaseClass(t.toString) && t.typeSymbol.isTrait && !excludes.contains(t.typeSymbol)) =>
+      case t: TypeRef if (!BaseClasses.isBaseClass(t.toString) && t.typeSymbol.isTrait && !excludes.contains(t.typeSymbol)) =>
         getSuperTraitsWithParent(t.typeSymbol) ::: List(t.typeSymbol)
     }
 

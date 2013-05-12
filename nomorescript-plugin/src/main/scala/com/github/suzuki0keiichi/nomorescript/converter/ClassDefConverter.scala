@@ -60,7 +60,7 @@ trait ClassDefConverter extends ConverterBase with PackageHelper with Annotation
         case t: Symbol =>
           getPackageName(t, null).get -> t.tpe.members.collect {
             case m: MethodSymbol if (t == m.enclClass.tpe.typeSymbol && m.name.toString.indexOf("$") == -1) => m.name.toString
-          }
+          }.toList
       }.toMap
 
       val members: Map[String, String] = cdef.impl.body.collect {

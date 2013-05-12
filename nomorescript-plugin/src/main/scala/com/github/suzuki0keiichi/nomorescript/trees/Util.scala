@@ -26,7 +26,7 @@ object Util {
   }
 
   def mapOrNil(lines: List[String], func: List[String] => List[String]) = {
-    lines match { 
+    lines match {
       case Nil => Nil
       case _ => func(lines)
     }

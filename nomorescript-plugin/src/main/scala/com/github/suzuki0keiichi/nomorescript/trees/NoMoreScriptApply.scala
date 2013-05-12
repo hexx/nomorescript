@@ -37,7 +37,7 @@ case class NoMoreScriptApply(fun: NoMoreScriptTree, params: List[NoMoreScriptTre
     val head = if (isArrayApply) "[" else "("
     val tail = if (isArrayApply) "]" else ")"
     val childJs2 = if (returnValue) Util.addFirst(childJs, "return ") else childJs
-    
+
     val paramCsString = if (params.isEmpty) {
       ""
     } else {

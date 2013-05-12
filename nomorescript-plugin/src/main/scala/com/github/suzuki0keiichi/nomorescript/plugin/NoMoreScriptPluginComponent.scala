@@ -29,10 +29,7 @@ import com.github.suzuki0keiichi.nomorescript.trees.NoMoreScriptTrees
 import com.github.suzuki0keiichi.nomorescript.trees.NoMoreScriptTry
 import com.github.suzuki0keiichi.nomorescript.trees.NoMoreScriptVal
 import java.io.File
-import java.io.OutputStreamWriter
-import java.io.FileOutputStream
 import com.github.suzuki0keiichi.nomorescript.converter.TreeConverter
-import com.github.suzuki0keiichi.nomorescript.converter.ScopedVariables
 
 class NoMoreScriptPluginComponent(val global: Global, parent: NoMoreScriptPlugin) extends PluginComponent with TreeConverter {
 
